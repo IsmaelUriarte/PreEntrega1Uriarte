@@ -79,4 +79,73 @@ while (cantidad != 0){
 alert("Gracias por su compra")
 
 
+let products = [
+    "Mix-tropical",
+    "Mix-premium",
+    "Pasas de uva",
+    "Almendras",
+    "Nueces",
+    "Arroz integral",
+    "Bebida energetica",
+    "Castañas",
+    "Yerba organica",
+    "Proteinas organicas"
+];
+
+let sortedProducts = products.sort();
+
+let input = document.getElementById("input");
+
+
+input.addEventListener("keyup", (e) => {
+    removeElements();
+    for(let i of sortedProducts){
+        if(i.toLowerCase() .startsWith(input.value.toLowerCase()) && input.value != ""){
+            let listItem = document.createElement("li");
+            listItem.classList.add("list-items");
+            listItem.style.cursor = "pointer";
+            listItem.setAttribute("oneclick", "displayProducts('" + i + "')");
+
+            let word = "<b>" + i.substring(0,input.value.length) + "</b>";
+            word += i.substring(input.value.length);
+
+            listItem.innerHTML = word;
+            document.querySelector(".list").appendChild(listItem)
+        }
+    }
+});
+
+function displayProducts(value){
+    input.value = value;
+}
+
+function removeElements(){
+    let items = document.querySelectorAll(".list-items");
+    items.forEach((items) =>{
+        items.remove();
+    })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
