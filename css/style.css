@@ -1,4 +1,53 @@
 
+.title{
+    margin-top: 15px;
+    font-size: 25px;
+}
+
+.div-p{
+    text-align: center;
+    object-position: center;
+}
+
+.btn{
+    box-shadow: 1px 1px 3px;
+    border-radius: 5px;
+    padding: 8px;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+.input-1{
+    box-shadow: 1px 1px 3px;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+.input-2{
+    box-shadow: 1px 1px 3px;
+    border-radius: 5px;
+    padding: 8px;
+    margin-top: 8px;
+}
+
+.label-p{
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+.p-kg{
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+
+
+
+
+
+
+
+
 
 
 
