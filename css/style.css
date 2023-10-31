@@ -1,44 +1,73 @@
+@import url('https://fonts.googleapis.com/css2? family= Knewave & family= Nunito:ital,wght@0,200;0,400;1,300;1,600 & display=swap');
 
-.title{
-    margin-top: 15px;
-    font-size: 25px;
+
+body{
+    padding: 0%;
+    margin: 0%;
+    overflow-x: hidden;
 }
 
-.div-p{
-    text-align: center;
-    object-position: center;
+
+
+/* NAVBAR */
+
+.header{
+    display: flex;
 }
 
-.btn{
-    box-shadow: 1px 1px 3px;
-    border-radius: 5px;
-    padding: 8px;
-    margin-top: 20px;
-    margin-right: 10px;
+.ul-nav, .a-nav{
+    text-decoration: none;
+    float: left;
 }
 
-.input-1{
-    box-shadow: 1px 1px 3px;
-    border-radius: 5px;
-    padding: 8px;
+.menu{
+    display: flex;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.input-2{
-    box-shadow: 1px 1px 3px;
-    border-radius: 5px;
-    padding: 8px;
-    margin-top: 8px;
-}
-
-.label-p{
+.logo{
+    color: black;
     font-size: 20px;
-    font-weight: lighter;
 }
 
-.p-kg{
-    font-size: 20px;
-    font-weight: lighter;
+.menu .navbar .ul-nav li{
+    position: relative;
+    float: left;
 }
+
+.menu .navbar .ul-nav li .a-nav{
+    font-size: 20px;
+    padding: 15px;
+    color: black;
+    display: block;
+}
+
+
+.menu-icono{
+    width: 25px;
+}
+
+
+
+
+/* CARRITO */
+
+.removee{
+    
+}
+
+.hide{
+    position: absolute;
+    transform: translateX(-250%);
+}
+
+
+
 
 
 

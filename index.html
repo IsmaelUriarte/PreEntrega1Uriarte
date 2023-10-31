@@ -3,28 +3,676 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="./css/style.css">
-    <title>Pre-entrega2 Ismael-Uriarte</title>
+    <title>e-commers</title>
 </head>
-<body>
+<body class="body z-0">
 
-    
-    <div class="div-p">
-        <h2 class="title">Bienvenidos a mi simulador de Suma y Resta de Kilogramos</h2>
+    <header class="pb-5 bg-gradient-to-t from-lime-700/50 to-zinc-200">
+        <div class=" pt-7 grid grid-cols-3">
+            <div class=" pt-3">
+                <div class="">
+                    <a href="" class="logo pl-5">Logo</a>
+                </div>
+            </div>
 
-        <label class="label-p" for="inputKilos1">Kilogramos 1:</label>
-    
-        <input class="input-1" type="number" id="inputKilos1"><br>
+            <div class="pt-3">
+                <div class="bsc-2 ">
+                    <input type="text" placeholder="Buscar Productos" class="outline-none buscador-2 border border-zinc-300 text-lg pt-2 pb-2 pl-3 pr-3 bg-white rounded-[22px]"> <button class="transform transition-all ease-in hover:scale-105 boton-buscar pr-3 pl-3 pt-1.5 pb-1.5 bg-lime-700/50 transition-colors ease transform hover:bg-lime-700/50 hover:text-white hover:shadow-xl  rounded-[15px] text-white"> Buscar </button>
+                </div>
+            </div>
 
-        <label class="label-p" for="inputKilos2">Kilogramos 2:</label>
+            
 
-        <input class="input-2" type="number" id="inputKilos2"><br>
+            <div class=" flex flex-row-reverse  pr-10">
 
-        <button class="btn" onclick="sumar()">Sumar</button>
-        <button class="btn" onclick="restar()">Restar</button>
+                <label class="btn-open flex items-center cursor-pointer ">
+                    <i class='bx bx-cart text-zinc-700 text-3xl rounded-full border border-transparent text p-[6px] mt-[10px] mr-[0px] transition-colors ease transform hover:shadow-xl'></i>
+                    <input type="button" id="boton" >
+                </label> 
 
-        <p class="p-kg">Resultado: <span id="resultado">0</span> kg</p>
+                <div class="mt-4 mr-2">
+                    <i class='bx bx-user text-zinc-700' ></i>
+                    <input  class="bg-transparent outline-none border border-lime-700 text-lime-700 cursor-pointer rounded-[22px] pt-[8px] pb-[8px] pl-[12px] pr-[12px] transition-colors ease transform hover:bg-lime-700/50 hover:text-white hover:shadow-xl hover:border-none " type="button" value="sign in" id="">
+                </div>
+
+                <div class="mt-4 mr-2.5">
+                    <i class='bx bx-user-plus text-zinc-700 text-lg'></i>
+                    <input  class="bg-transparent outline-none border border-lime-700 text-lime-700 cursor-pointer rounded-[22px] pt-[8px] pb-[8px] pl-[12px] pr-[12px] transition-colors ease transform hover:bg-lime-700/50 hover:text-white hover:shadow-xl hover:border-none " type="button" value="sign up" id="">
+                </div>
+
+            </div>
+
+            
+    </header>
+
+
+
+    <main>
+
+    <!-- <section class="section-carrito pt-20">
+        <aside class="carrito">
+            <h1>Carrito</h1>
+            <h2>Productos seleccionados</h2>
+
+
+            <div>
+
+            </div>
+
+
+            <h2>Total:</h2>
+
+            <button class="ocultar ">
+                <h3>Ocultar</h3>
+            </button >
+
+            <button class="vaciar-carrito">
+                <h3>Vaciar carrito</h3>
+            </button>
+
+            <button class="comprar">
+                <h3>Comprar</h3>
+            </button>
+
+        </aside>
+    </section>
+
+
+    <section class="descripcion-productos">
+        <aside class="descripcion">
+            <h1>Productos</h1>
+            <h2>Descripción</h2>
+
+
+        </aside>
+    </section> -->
+
+
+
+    <!-- <video autoplay loop muted class="absolute top-0 left-0 w-full h-full object-cover">
+
+        <source src="./videos/video-fondo.mov" type="video/mov">
+
+    </video> -->
+
+
+
+    <div class="container-form register removee left-[14%] top-[5%] m-20 ml-48 flex fixed z-10 h-[500px] max-w-[900px] shadow-xl rounded-[15px] transition-all ease duration-[1s] m-5 items-center justify-center bg-white">
+        <div class="information pl-[150px] h-full w-1/5 flex rounded-l-[15px] items-center text-center bg-lime-800/50 bg-opacity-80 border border-transparent">
+            <div class="info-childs w-full ">
+                
+            </div>
+        </div>
+
+        <div class="border border-transparent form-information flex items-center justify-center text-center h-full w-4/5 rounded-r-[15px] bg-zinc-200">
+            <div class="form-information-childs mx-[100px] ">
+                <h2 class="text-3xl font-semibold text-zinc-700">Crear una Cuenta</h2>
+                <div class="icons my-[15px]">
+                    <i class='bx bxl-google text-lime-700/50 rounded-full border border-lime-700/50 p-[15px] mx-[10px] cursor-pointer transition-colors ease transform hover:bg-lime-300/50'></i>
+                    <i class='bx bxl-github text-lime-700/50 rounded-full border border-lime-700/50 p-[15px] mx-[10px] cursor-pointer transition-colors ease transform hover:bg-lime-300/50'></i>
+                    <i class='bx bxl-linkedin text-lime-700/50 rounded-full border border-lime-700/50 p-[15px] mx-[10px] cursor-pointer transition-colors ease transform hover:bg-lime-300/50'></i>
+                </div>
+                <p class="text-zinc-700">o usá tu e-mail para registrarte.</p>
+                <form class="form mt-[30px]">
+                    <label class="flex items-center border border-zinc-400 mb-7 pl-2.5 pr-2.5 rounded-[25px] bg-white shadow-lg ">
+                        <i class='bx bx-user text-zinc-500' ></i>
+                        <input id="nombreCompleto" class="nombre-completo w-full bg-white pb-2.5 pt-2.5 rounded-[25px] border-none outline-none ml-1.5" type="text" placeholder="Nombre Completo">
+                    </label>
+
+                    <label class="flex items-center border border-zinc-400 mb-7 pl-2.5 pr-2.5 rounded-[25px] bg-white shadow-lg ">
+                        <i class='bx bx-envelope text-zinc-500'></i>
+                        <input id="correoLogin" class="correo-login w-full bg-white pb-2.5 pt-2.5 rounded-[25px] border-none outline-none ml-1.5" type="email" placeholder="Correo Electronico">
+                    </label>
+
+                    <label class="flex items-center border border-zinc-400 mb-7 pl-2.5 pr-2.5 rounded-[25px] bg-white shadow-lg ">
+                        <i class='bx bx-lock-alt text-zinc-500' ></i>
+                        <input id="contrasenaLogin" class="contraseña-login w-full bg-white pb-2.5 pt-2.5 rounded-[25px] border-none outline-none ml-1.5" type="password" placeholder="Contraseña">
+                    </label>
+                    <button class="btn-sign-in bg-transparent outline-none border border-lime-700 text-lime-700 cursor-pointer rounded-[22px] mt-[20px] pt-[10px] pb-[10px] pl-[20px] pr-[20px] transition-colors ease transform hover:bg-lime-700/50 hover:text-white hover:shadow-xl hover:border-none "  id="boton-registro">Registrarse</button>
+                </form>
+            </div>
+        </div>
     </div>
+
+
+
+    <div class="container-form loginn hide m-20 left-[28%] top-[5%] fixed flex z-10 h-[500px] max-w-[900px] shadow-xl rounded-[15px] bg-white transition-all ease duration-[1s] m-5 items-center justify-center">
+        <div class="information pl-[150px] h-full w-1/5 flex rounded-l-[15px] items-center text-center bg-lime-800/50 border border-transparent">
+            <div class="info-childs w-full  ">
+                
+            </div>
+        </div>
+
+        <div class="border border-transparent form-information flex items-center justify-center text-center h-full w-4/5 rounded-r-[15px] bg-zinc-200">
+            <div class="form-information-childs mx-[100px] ">
+                <h2 class="text-3xl font-semibold text-zinc-700">Iniciar Sección</h2>
+                <div class="icons my-[15px]">
+                    <i class='bx bxl-google text-lime-700/50 rounded-full border border-lime-700/50 p-[15px] mx-[10px] cursor-pointer transition-colors ease transform hover:bg-lime-300/50'></i>
+                    <i class='bx bxl-github text-lime-700/50 rounded-full border border-lime-700/50 p-[15px] mx-[10px] cursor-pointer transition-colors ease transform hover:bg-lime-300/50'></i>
+                    <i class='bx bxl-linkedin text-lime-700/50 rounded-full border border-lime-700/50 p-[15px] mx-[10px] cursor-pointer transition-colors ease transform hover:bg-lime-300/50'></i>
+                </div>
+                <p class="text-zinc-700">o Iniciar Sección con una cuenta.</p>
+                <form class="form mt-[30px]">
+                    
+                    <label class="flex items-center border border-zinc-400 mb-7 pl-2.5 pr-2.5 rounded-[25px] bg-white shadow-lg ">
+                        <i class='bx bx-envelope text-zinc-500'></i>
+                        <input class="w-full bg-white pb-2.5 pt-2.5 rounded-[25px] border-none outline-none ml-1.5" type="email" placeholder="Correo Electronico">
+                    </label>
+
+                    <label class="flex items-center border border-zinc-400 mb-7 pl-2.5 pr-2.5 rounded-[25px] bg-white shadow-lg ">
+                        <i class='bx bx-lock-alt text-zinc-500' ></i>
+                        <input class="w-full bg-white pb-2.5 pt-2.5 rounded-[25px] border-none outline-none ml-1.5" type="password" placeholder="Contraseña">
+                    </label>
+                    <button class="btn-sign-in bg-transparent outline-none border border-lime-700 text-lime-700 cursor-pointer rounded-[22px] mt-[20px] pt-[10px] pb-[10px] pl-[20px] pr-[20px] transition-colors ease transform hover:bg-lime-700/50 hover:text-white hover:shadow-xl hover:border-none " id="boton-iniciar-sesion">Iniciar Sección</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+        <section class="section-home pt-[60px] pb-[100px] bg-gradient-to-b from-lime-700/50 to-zinc-200" >
+
+            <div class="pr-20 pl-20">
+                <div class="bg-white bg-opacity-20 text-center rounded-[15px] shadow-lg  text-zinc-600 ">
+                    <div class="pt-[50px] pb-[50px]  transform transition-all ease-in hover:scale-110">
+                        <h3 class="sub1 text-3xl">Les damos la Bienvenida a:</h3>
+                        <h1 class="titulo pt-10 text-7xl font-bold">NutriFit</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contenido-inicio  pl-10">
+
+                
+
+                <div class="pl-[80px] pr-[50px] pt-[50px]">
+
+                    <div class="pr-11 pb-11 text-center ">
+                        <div class="p-5 pb-11 rounded-lg bg-transparent text-4xl font-semibold text-zinc-600">
+                            <h2>Encontrá las mejores promos con Nosotros!!</h2>
+                        </div>
+                    </div>
+
+                    <div class="grid grid grid-cols-4 gap-4">
+
+                        <div class="p-7  transform transition hover:translate-x-6 ">
+                            <h2 class="text-center text-2xl font-semibold pb-5 text-zinc-700">Promo 1</h2>
+                            <div class="p-5 shadow-lg border border-transparent transform hover:border-lime-700 rounded-lg font-semibold bg-lime-700/50 text-zinc-600 hover:bg-lime-800/50">
+                                
+                                <p>mix de congelados + mix de frutos secos + bebida energetica</p>
+                                <p class="text-center pt-1.5">$$$</p>
+                                <div class="btn items-center text-center">
+                                    <button class="boton-buscar py-1.5 w-36 p-1 mt-4 rounded-[25px] bg-transparent transform transition-all ease-in hover:scale-105 duration-200 border border-lime-800 transform hover:border-transparent hover:shadow-lg transition-colors transform hover:bg-lime-900/50 text-lime-800 transform hover:text-gray-200"><a href="">Añadir al Carrito</a></button>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="p-7  transform transition hover:translate-x-6 ">
+                            <h2 class="text-center text-2xl font-semibold pb-5 text-zinc-700">Promo 2</h2>
+                            <div class="p-5 shadow-lg border border-transparent transform hover:border-lime-700 rounded-lg bg-lime-700/50 font-semibold text-zinc-600 hover:bg-lime-800/50">
+                                
+                                <p>mix de congelados + mix de frutos secos + bebida energetica</p>
+                                <p class="text-center pt-1.5">$$$</p>
+                                <div class="btn items-center text-center">
+                                    <button class="boton-buscar py-1.5 w-36 p-1 mt-4 rounded-[25px] bg-transparent transform transition-all ease-in hover:scale-105 duration-200 border border-lime-800 transform hover:border-transparent hover:shadow-lg transition-colors transform hover:bg-lime-900/50 text-lime-800 transform hover:text-gray-200"><a href="">Añadir al Carrito</a></button>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="p-7 transform transition hover:translate-x-6 ">
+                            <h2 class="text-center text-2xl font-semibold pb-5 text-zinc-700">Promo 3</h2>
+                            <div class="p-5 shadow-lg border border-transparent transform hover:border-lime-700 rounded-lg bg-lime-700/50 font-semibold text-zinc-600 hover:bg-lime-800/50">
+                                
+                                <p>mix de congelados + mix de frutos secos + bebida energetica</p>
+                                <p class="text-center pt-1.5">$$$</p>
+                                <div class="btn items-center text-center">
+                                    <button class="boton-buscar py-1.5 w-36 p-1 mt-4 rounded-[25px] bg-transparent transform transition-all ease-in hover:scale-105 duration-200 border border-lime-800 transform hover:border-transparent hover:shadow-lg transition-colors transform hover:bg-lime-900/50 text-lime-800 transform hover:text-gray-200"><a href="">Añadir al Carrito</a></button>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="p-7 transform transition hover:translate-x-6 ">
+                            <h2 class="text-center text-2xl font-semibold pb-5 text-zinc-700">Promo 4</h2>
+                            <div class="p-5 shadow-lg border border-transparent transform hover:border-lime-700 rounded-lg bg-lime-700/50  font-semibold text-zinc-600 hover:bg-lime-800/50">
+                                
+                                <p>mix de congelados + mix de frutos secos + bebida energetica</p>
+                                <p class="text-center pt-1.5">$$$</p>
+                                <div class="btn items-center text-center">
+                                    <button class="boton-buscar  py-1.5 w-36 p-1 mt-4 rounded-[25px] bg-transparent transform transition-all ease-in hover:scale-105 duration-200 border border-lime-800 transform hover:border-transparent hover:shadow-lg transition-colors transform hover:bg-lime-900/50 text-lime-800 transform hover:text-gray-200"><a href="">Añadir al Carrito</a></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+
+
+        <section class="section-catalogo grid grid-cols-5 pb-24 bg-zinc-200">
+
+            <div class="col-span-5 pt-20 pb-20">
+                <div class="intro-catalogo text-center">
+                    <h2 class="titulo-catalogo mb-5 text-5xl font-bold text-gray-700 ">Conocé nuestro catálogo.</h2>
+                    <p class="parrafo-catalogo text-xl pt-4 mb-14 pl-28 pr-28 text-gray-700">En nutriFit tenemos para ofrecerte los mejores productos para que puedas comenzar a realizar un cambio de vida mucho más saludable.</p>
+                </div>
+            </div>
+
+            <div class="pt-10">
+                <div class="bg-gray-100 pt-11 pb-11 border-gray-500  rounded-r-[20px] shadow-xl ">
+                    <div class="text-xl text-center pr-[40px] pt-[0px] ">
+                        <div class="">
+                            <span class="border-b border-zinc-500 text-zinc-500 font-semibold">Mix-Congelados</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-7  text-center">
+                    <div class="bg-lime-700/50 pt-3 pb-3 rounded-r-[18px] shadow-lg">
+                        <div class=" pl-5 cursor-pointer">
+                            <h2 class="p-3 text-base border-b-2 border-transparent hover:border-b-2 hover:bg-zinc-500/50 text-zinc-600 rounded-[18px] font-semibold w-max transform transition hover:translate-x-6">Mix-frutos rojos/frutilla</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-5  text-center">
+                    <div class="bg-lime-700/50 pt-3 pb-3 rounded-r-[18px] shadow-lg">
+                        <div class=" pl-5 cursor-pointer">
+                            <h2 class="p-3 text-base border-b-2 border-transparent hover:border-b-2 hover:bg-zinc-500/50 text-zinc-600 rounded-[18px] font-semibold w-max transform transition hover:translate-x-6">Mix-frutos rojos/frutilla</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-5  text-center">
+                    <div class="bg-lime-700/50 pt-3 pb-3 rounded-r-[18px] shadow-lg">
+                        <div class=" pl-5 cursor-pointer">
+                            <h2 class="p-3 text-base border-b-2 border-transparent hover:border-b-2 hover:bg-zinc-500/50 text-zinc-600 rounded-[18px] font-semibold w-max transform transition hover:translate-x-6">Mix-frutos rojos/frutilla</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-span-4 pb-24 pt-[25px]">
+                <div>
+                    <div class="intro-catalogo text-center">
+                        <h2 class="titulo-catalogo text-3xl font-bold text-gray-700 ">+ info sobre esta parte del catálogo.</h2>
+                        <p class="parrafo-catalogo pt-4 pb-8 pl-20 pr-20 text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque necessitatibus placeat, velit iste voluptatem qui vero veniam inventore totam aut?</p>
+                    </div>
+                </div>
+
+
+
+            <div class="pr-[50px]">
+                <div class="flex">
+                    <div class="w-2/12 flex items-center">
+                        <div class="w-full text-right">
+                            <button onclick="prev()" class="p-3 rounded-full bg-white border-gray-300 shadow-lg mr-5">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+    
+                    <div id="sliderContainer" class="w-10/12 overflow-hidden pt-10 border-2 border-gray-300 border-t-zinc-200"> 
+                        <ul id="slider" class="flex w-full  transition-margin duration-700">
+                            <li class="card p-5 ">
+                                <div class="border rounded-lg p-5 h-full bg-gray-100 transform transition-all ease-in hover:scale-105 shadow-lg">
+                                    <img class="h-50 w-full object-cover rounded-md" src="./images/alimentos-dieteticos.jpg" alt="">
+                                    <h2 class=" mt-2 text-2xl font-bold text-gray-700">Producto 1</h2>
+                                    <p class=" mt-2 text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nam consectetur doloremque perferendis.</p>
+                                    <button class="añadir rounded-[25px] py-2 w-36 p-1 bg-lime-700 mt-4 hover:bg-lime-600 focus:scale-95 transition-all duration-200 text-white ease-out"><a href="">Añadir al Carrito</a></button>
+                                </div>
+                            </li>
+
+                            <li class="card p-5 ">
+                                <div class="border rounded-lg p-5 h-full bg-gray-100 transform transition-all ease-in hover:scale-105 shadow-lg">
+                                    <img class="h-50 w-full object-cover rounded-md" src="./images/alimentos-dieteticos.jpg" alt="">
+                                    <h2 class=" mt-2 text-2xl font-bold text-gray-700">Producto 2</h2>
+                                    <p class=" mt-2 text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nam consectetur doloremque perferendis.</p>
+                                    <button class="añadir rounded-[25px] py-2 w-36 p-1 bg-lime-700 mt-4 hover:bg-lime-600 focus:scale-95 transition-all duration-200 text-white ease-out"><a href="">Añadir al Carrito</a></button>
+                                </div>
+                            </li>
+
+                            <li class="card p-5 ">
+                                <div class="border rounded-lg p-5 h-full bg-gray-100 transform transition-all ease-in hover:scale-105 shadow-lg">
+                                    <img class="h-50 w-full object-cover rounded-md" src="./images/alimentos-dieteticos.jpg" alt="">
+                                    <h2 class=" mt-2 text-2xl font-bold text-gray-700">Producto 3</h2>
+                                    <p class=" mt-2 text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nam consectetur doloremque perferendis.</p>
+                                    <button class="añadir rounded-[25px] py-2 w-36 p-1 bg-lime-700 mt-4 hover:bg-lime-600 focus:scale-95 transition-all duration-200 text-white ease-out"><a href="">Añadir al Carrito</a></button>
+                                </div>
+                            </li>
+
+                            <li class="card p-5 ">
+                                <div class="border rounded-lg p-5 h-full bg-gray-100 transform transition-all ease-in hover:scale-105 shadow-lg">
+                                    <img class="h-50 w-full object-cover rounded-md" src="./images/alimentos-dieteticos.jpg" alt="">
+                                    <h2 class=" mt-2 text-2xl font-bold text-gray-700">Producto 4</h2>
+                                    <p class=" mt-2 text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nam consectetur doloremque perferendis.</p>
+                                    <button class="añadir rounded-[25px] py-2 w-36 p-1 bg-lime-700 mt-4 hover:bg-lime-600 focus:scale-95 transition-all duration-200 text-white ease-out"><a href="">Añadir al Carrito</a></button>
+                                </div>
+                            </li>
+
+                            <li class="card p-5 ">
+                                <div class="border rounded-lg p-5 h-full bg-gray-100 transform transition-all ease-in hover:scale-105 shadow-lg">
+                                    <img class="h-50 w-full object-cover rounded-md" src="./images/alimentos-dieteticos.jpg" alt="">
+                                    <h2 class=" mt-2 text-2xl font-bold text-gray-700">Producto 5</h2>
+                                    <p class=" mt-2 text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nam consectetur doloremque perferendis.</p>
+                                    <button class="añadir rounded-[25px] py-2 w-36 p-1 bg-lime-700 mt-4 hover:bg-lime-600 focus:scale-95 transition-all duration-200 text-white ease-out"><a href="">Añadir al Carrito</a></button>
+                                </div>
+                            </li>
+
+                            <li class="card p-5 ">
+                                <div class="border rounded-lg p-5 h-full bg-gray-100 transform transition-all ease-in hover:scale-105 shadow-lg">
+                                    <img class="h-50 w-full object-cover rounded-md" src="./images/alimentos-dieteticos.jpg" alt="">
+                                    <h2 class=" mt-2 text-2xl font-bold text-gray-700">Producto 6</h2>
+                                    <p class=" mt-2 text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nam consectetur doloremque perferendis.</p>
+                                    <button class="añadir rounded-[25px] py-2 w-36 p-1 bg-lime-700 mt-4 hover:bg-lime-600 focus:scale-95 transition-all duration-200 text-white ease-out"><a href="">Añadir al Carrito</a></button>
+                                </div>
+                            </li>
+
+                            <li class="card p-5 ">
+                                <div class="border rounded-lg p-5 h-full bg-gray-100 transform transition-all ease-in hover:scale-105 shadow-lg">
+                                    <img class="h-50 w-full object-cover rounded-md" src="./images/alimentos-dieteticos.jpg" alt="">
+                                    <h2 class=" mt-2 text-2xl font-bold text-gray-700">Producto 7</h2>
+                                    <p class=" mt-2 text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nam consectetur doloremque perferendis.</p>
+                                    <button class="añadir rounded-[25px] py-2 w-36 p-1 bg-lime-700 mt-4 hover:bg-lime-600 focus:scale-95 transition-all duration-200 text-white ease-out"><a href="">Añadir al Carrito</a></button>
+                                </div>
+                            </li>
+
+                            <li class="card p-5 ">
+                                <div class="border rounded-lg p-5 h-full bg-gray-100 transform transition-all ease-in hover:scale-105 shadow-lg">
+                                    <img class="h-50 w-full object-cover rounded-md" src="./images/alimentos-dieteticos.jpg" alt="">
+                                    <h2 class=" mt-2 text-2xl font-bold text-gray-700">Producto 8</h2>
+                                    <p class=" mt-2 text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nam consectetur doloremque perferendis.</p>
+                                    <button class="añadir rounded-[25px] py-2 w-36 p-1 bg-lime-700 mt-4 hover:bg-lime-600 focus:scale-95 transition-all duration-200 text-white ease-out"><a href="">Añadir al Carrito</a></button>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="w-2/12 flex items-center">
+                        <div class="w-full">
+                            <button onclick="next()" class="p-3 rounded-full bg-white border-gray-300 shadow-lg ml-5">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+<!----------------->
+
+
+<div class="col-span-4 pb-24 pt-[25px]">
+    <div>
+        <div class="intro-catalogo text-center">
+            <h2 class="titulo-catalogo text-3xl font-bold text-gray-700 ">+ info sobre esta parte del catálogo.</h2>
+            <p class="parrafo-catalogo pt-4 pb-8 pl-20 pr-20 text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque necessitatibus placeat, velit iste voluptatem qui vero veniam inventore totam aut?</p>
+        </div>
+    </div>
+
+
+
+<div class="pr-[50px]">
+    <div class="flex">
+        <div class="w-2/12 flex items-center">
+            <div class="w-full text-right">
+                <button onclick="prev()" class="p-3 rounded-full bg-white border-gray-300 shadow-lg mr-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="sliderContainer2" class="w-10/12 overflow-hidden pt-10 border-2 border-gray-300 border-t-zinc-200"> 
+            <ul id="slider2" class="flex w-full  transition-margin duration-700">
+                <li class="cardd p-5 ">
+                    <div class="border rounded-lg p-5 h-full bg-gray-100 transform transition-all ease-in hover:scale-105 shadow-lg">
+                        <img class="h-50 w-full object-cover rounded-md" src="./images/alimentos-dieteticos.jpg" alt="">
+                        <h2 class=" mt-2 text-2xl font-bold text-gray-700">Producto 1</h2>
+                        <p class=" mt-2 text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nam consectetur doloremque perferendis.</p>
+                        <button class="añadir rounded-[25px] py-2 w-36 p-1 bg-lime-700 mt-4 hover:bg-lime-600 focus:scale-95 transition-all duration-200 text-white ease-out"><a href="">Añadir al Carrito</a></button>
+                    </div>
+                </li>
+
+                <li class="cardd p-5 ">
+                    <div class="border rounded-lg p-5 h-full bg-gray-100 transform transition-all ease-in hover:scale-105 shadow-lg">
+                        <img class="h-50 w-full object-cover rounded-md" src="./images/alimentos-dieteticos.jpg" alt="">
+                        <h2 class=" mt-2 text-2xl font-bold text-gray-700">Producto 1</h2>
+                        <p class=" mt-2 text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nam consectetur doloremque perferendis.</p>
+                        <button class="añadir rounded-[25px] py-2 w-36 p-1 bg-lime-700 mt-4 hover:bg-lime-600 focus:scale-95 transition-all duration-200 text-white ease-out"><a href="">Añadir al Carrito</a></button>
+                    </div>
+                </li>
+
+                <li class="cardd p-5 ">
+                    <div class="border rounded-lg p-5 h-full bg-gray-100 transform transition-all ease-in hover:scale-105 shadow-lg">
+                        <img class="h-50 w-full object-cover rounded-md" src="./images/alimentos-dieteticos.jpg" alt="">
+                        <h2 class=" mt-2 text-2xl font-bold text-gray-700">Producto 1</h2>
+                        <p class=" mt-2 text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nam consectetur doloremque perferendis.</p>
+                        <button class="añadir rounded-[25px] py-2 w-36 p-1 bg-lime-700 mt-4 hover:bg-lime-600 focus:scale-95 transition-all duration-200 text-white ease-out"><a href="">Añadir al Carrito</a></button>
+                    </div>
+                </li>
+
+                <li class="cardd p-5 ">
+                    <div class="border rounded-lg p-5 h-full bg-gray-100 transform transition-all ease-in hover:scale-105 shadow-lg">
+                        <img class="h-50 w-full object-cover rounded-md" src="./images/alimentos-dieteticos.jpg" alt="">
+                        <h2 class=" mt-2 text-2xl font-bold text-gray-700">Producto 1</h2>
+                        <p class=" mt-2 text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nam consectetur doloremque perferendis.</p>
+                        <button class="añadir rounded-[25px] py-2 w-36 p-1 bg-lime-700 mt-4 hover:bg-lime-600 focus:scale-95 transition-all duration-200 text-white ease-out"><a href="">Añadir al Carrito</a></button>
+                    </div>
+                </li>
+
+                <li class="cardd p-5 ">
+                    <div class="border rounded-lg p-5 h-full bg-gray-100 transform transition-all ease-in hover:scale-105 shadow-lg">
+                        <img class="h-50 w-full object-cover rounded-md" src="./images/alimentos-dieteticos.jpg" alt="">
+                        <h2 class=" mt-2 text-2xl font-bold text-gray-700">Producto 1</h2>
+                        <p class=" mt-2 text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nam consectetur doloremque perferendis.</p>
+                        <button class="añadir rounded-[25px] py-2 w-36 p-1 bg-lime-700 mt-4 hover:bg-lime-600 focus:scale-95 transition-all duration-200 text-white ease-out"><a href="">Añadir al Carrito</a></button>
+                    </div>
+                </li>
+
+                <li class="cardd p-5 ">
+                    <div class="border rounded-lg p-5 h-full bg-gray-100 transform transition-all ease-in hover:scale-105 shadow-lg">
+                        <img class="h-50 w-full object-cover rounded-md" src="./images/alimentos-dieteticos.jpg" alt="">
+                        <h2 class=" mt-2 text-2xl font-bold text-gray-700">Producto 1</h2>
+                        <p class=" mt-2 text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nam consectetur doloremque perferendis.</p>
+                        <button class="añadir rounded-[25px] py-2 w-36 p-1 bg-lime-700 mt-4 hover:bg-lime-600 focus:scale-95 transition-all duration-200 text-white ease-out"><a href="">Añadir al Carrito</a></button>
+                    </div>
+                </li>
+
+                <li class="cardd p-5 ">
+                    <div class="border rounded-lg p-5 h-full bg-gray-100 transform transition-all ease-in hover:scale-105 shadow-lg">
+                        <img class="h-50 w-full object-cover rounded-md" src="./images/alimentos-dieteticos.jpg" alt="">
+                        <h2 class=" mt-2 text-2xl font-bold text-gray-700">Producto 1</h2>
+                        <p class=" mt-2 text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nam consectetur doloremque perferendis.</p>
+                        <button class="añadir rounded-[25px] py-2 w-36 p-1 bg-lime-700 mt-4 hover:bg-lime-600 focus:scale-95 transition-all duration-200 text-white ease-out"><a href="">Añadir al Carrito</a></button>
+                    </div>
+                </li>
+
+                <li class="cardd p-5 ">
+                    <div class="border rounded-lg p-5 h-full bg-gray-100 transform transition-all ease-in hover:scale-105 shadow-lg">
+                        <img class="h-50 w-full object-cover rounded-md" src="./images/alimentos-dieteticos.jpg" alt="">
+                        <h2 class=" mt-2 text-2xl font-bold text-gray-700">Producto 1</h2>
+                        <p class=" mt-2 text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nam consectetur doloremque perferendis.</p>
+                        <button class="añadir rounded-[25px] py-2 w-36 p-1 bg-lime-700 mt-4 hover:bg-lime-600 focus:scale-95 transition-all duration-200 text-white ease-out"><a href="">Añadir al Carrito</a></button>
+                    </div>
+                </li>
+
+                <li class="cardd p-5 ">
+                    <div class="border rounded-lg p-5 h-full bg-gray-100 transform transition-all ease-in hover:scale-105 shadow-lg">
+                        <img class="h-50 w-full object-cover rounded-md" src="./images/alimentos-dieteticos.jpg" alt="">
+                        <h2 class=" mt-2 text-2xl font-bold text-gray-700">Producto 1</h2>
+                        <p class=" mt-2 text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nam consectetur doloremque perferendis.</p>
+                        <button class="añadir rounded-[25px] py-2 w-36 p-1 bg-lime-700 mt-4 hover:bg-lime-600 focus:scale-95 transition-all duration-200 text-white ease-out"><a href="">Añadir al Carrito</a></button>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="w-2/12 flex items-center">
+            <div class="w-full">
+                <button onclick="next()" class="p-3 rounded-full bg-white border-gray-300 shadow-lg ml-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<div class="pt-10">
+    <div class="bg-gray-100 pt-11 pb-11 border-gray-500  rounded-l-[20px] shadow-xl ">
+        <div class="text-xl text-center pr-[40px] pt-[0px] ">
+            <div class="">
+                <span class="border-b border-zinc-500 text-zinc-500 font-semibold">Mix-Congelados</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="pt-7  text-center">
+        <div class="bg-lime-700/50 pt-3 pb-3 rounded-l-[18px] shadow-lg">
+            <div class=" pl-5 cursor-pointer">
+                <h2 class="p-3 text-base border-b-2 border-transparent hover:border-b-2 hover:bg-zinc-500/50 text-zinc-600 rounded-[18px] font-semibold w-max transform transition hover:translate-x-6">Mix-frutos rojos/frutilla</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="pt-5  text-center">
+        <div class="bg-lime-700/50 pt-3 pb-3 rounded-l-[18px] shadow-lg">
+            <div class=" pl-5 cursor-pointer">
+                <h2 class="p-3 text-base border-b-2 border-transparent hover:border-b-2 hover:bg-zinc-500/50 text-zinc-600 rounded-[18px] font-semibold w-max transform transition hover:translate-x-6">Mix-frutos rojos/frutilla</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="pt-5  text-center">
+        <div class="bg-lime-700/50 pt-3 pb-3 rounded-l-[18px] shadow-lg">
+            <div class=" pl-5 cursor-pointer">
+                <h2 class="p-3 text-base border-b-2 border-transparent hover:border-b-2 hover:bg-zinc-500/50 text-zinc-600 rounded-[18px] font-semibold w-max transform transition hover:translate-x-6">Mix-frutos rojos/frutilla</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        </section>
+
+
+
+
+
+
+
+        <section class="background w-full h-64 bg-no-repeat bg-cover bg-bottom py-8 opacity-[.93]" style="background-image: url(../e-commers/images/desayuno-saludable.webp);">
+
+            <div class="contenido1">
+    
+            </div>
+    
+        </section>
+
+
+
+        <section class="section-contacto pt-24 pb-24 pl-[50px] pr-[50px] bg-zinc-200">
+            <div class="grid grid-cols-2 pt-5 pb-10 rounded-[15px]  w-full transform transition-all ease-in hover:scale-105 bg-gray-100 border-gray-300 shadow-lg transform hover:shadow-xl h-5/6">
+                <div class="pl-[10px]">
+                    <h2 class=" pb-10  text-3xl font-bold text-gray-700">Contactanos</h2>
+                    <div class="pr-[25px]">
+                        <p class="pb-7  tracking-tighter leading-relaxed text-gray-700">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus adipisci libero unde vero earum quos reiciendis architecto cumque recusandae. Dolores aspernatur sit et facere quasi.
+                        </p>
+                    </div>
+                    <div class="grid inline-block font-semibold text-gray-700">
+                        <a href="" class="pb-5">+0000000</a>
+                        <a href="" class="pb-5">+0000000</a>
+                        <a href="" class="">www.info@info.com</a>
+                    </div>
+                </div>
+
+                <div class="pt-5">
+                    <div class="pt-2.5">
+                        <label for="nombre" ></label>
+                        <input type="text" name="introducir_nombre" placeholder="Escribe tu nombre" class="login p-1.5 outline-none rounded-md border-2 border-slate-300 w-11/12" value="" required>
+                    </div>
+
+                    <div class="pt-3">
+                        <label for="apellido"></label>
+                        <input type="text" name="introducir_apellido" placeholder="Escribe tu apellido" class="login outline-none p-1.5 rounded-md border-2 border-slate-300 w-11/12" value="" required>
+                    </div>
+
+                    <div class="pt-3 ">
+                        <label for="email"></label>
+                        <input type="text" name="introducir_mail" placeholder="Dejanos tu mensaje" class="login outline-none pl-[5px] pt-[10px] pb-[70px] rounded-md border-2 border-slate-300 w-11/12" value="" required>
+                    </div>
+
+                    <div class="pt-3 ">
+                        <button class="transform transition-all ease-in hover:scale-105 boton-buscar py-2 w-36 p-1 bg-lime-700 mt-4 hover:bg-lime-600 focus:scale-95 transition-all duration-200 rounded-md text-white ease-out">
+                            <h3>Enviar Mensaje</h3>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="pie-pagina pt-[15px] pb-[15px] bg-lime-900/80 justify-center">
+        <!-- <div class="shadow-[0_10px_10px_0_rgba(0,0,0,0.1)] pt-3"></div> -->
+
+        <div class="pb-11 pt-9">
+            <div class="flex place-content-around ">
+
+                <h2 class="pt-7 text-3xl">(Logo) NutriFit</h2>
+
+                <div class="bsc-2  text-center pl-[0px] pr-[0px] ">
+                    <b class="text-white">Suscríbete para recibir Novedades</b>
+                    <p class="pb-2.5 text-white">Nuevas productos y semanas de descuebtos.</p>
+                    <input type="mail" placeholder="Ingresá tu e-mail" class="buscador-2 p-1.5 pl-2.5 rounded-[18px] outline-none"> <button class="transform transition-all ease-in hover:scale-105 boton-buscar p-1.5 bg-gradient-to-r from-lime-600 to-lime-500 hover:from-lime-500 hover:to-lime-600 rounded-[15px] text-white">Suscríbirse</button>
+                </div>
+
+                <div class="flex place-content-around">
+                    <a href=""><img class="mt-7 h-14 w-14 text-gray-300 rounded-full border border-transparent text p-[9px] transition-colors ease transform hover:shadow-xl" src="./images/icons8-instagram (1).svg" alt=""></a>
+                    <a href=""><img class="mt-7 ml-3 h-14 w-14 text-gray-300 rounded-full border border-transparent text p-[9px] transition-colors ease transform hover:shadow-xl" src="./images/icons8-linkedin.svg" alt=""></a>
+                    <a href=""><img class="mt-7 ml-3 h-14 w-14 text-gray-300 rounded-full border border-transparent text p-[9px] transition-colors ease transform hover:shadow-xl" src="./images/icons8-whatsapp (1).svg" alt=""></a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- <div class="shadow-[0_-10px_10px_0_rgba(0,0,0,0.1)] pb-3"></div> -->
+    </footer>
+
+    <div class="copy pt-5 pb-2.5 text-center bg-zinc-200">
+        <p class="parrafo-foter pt-5">Términos y Condiciones,
+            Normas de Confidencialidad y Privacidad</p>
+
+        <small>&copy;2017 <b>NutriFit</b> - Todos los Derechos Reservados</small>
+    </div>
+
+
+
+
 
 
 <script src="script.js"></script>
