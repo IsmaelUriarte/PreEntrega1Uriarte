@@ -58,10 +58,11 @@ body{
 /* CARRITO */
 
 .removee{
-    
+    position: absolute;
+    transform: translateX(-250%);
 }
 
-.hide{
+.loginn{
     position: absolute;
     transform: translateX(-250%);
 }

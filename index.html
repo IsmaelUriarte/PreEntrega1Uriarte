@@ -35,12 +35,12 @@
 
                 <div class="mt-4 mr-2">
                     <i class='bx bx-user text-zinc-700' ></i>
-                    <input  class="bg-transparent outline-none border border-lime-700 text-lime-700 cursor-pointer rounded-[22px] pt-[8px] pb-[8px] pl-[12px] pr-[12px] transition-colors ease transform hover:bg-lime-700/50 hover:text-white hover:shadow-xl hover:border-none " type="button" value="sign in" id="">
+                    <input  class="bg-transparent outline-none border border-lime-700 text-lime-700 cursor-pointer rounded-[22px] pt-[8px] pb-[8px] pl-[12px] pr-[12px] transition-colors ease transform hover:bg-lime-700/50 hover:text-white hover:shadow-xl hover:border-none " type="button" value="sign in" onclick="toggleContainerForm()" id="">
                 </div>
 
                 <div class="mt-4 mr-2.5">
                     <i class='bx bx-user-plus text-zinc-700 text-lg'></i>
-                    <input  class="bg-transparent outline-none border border-lime-700 text-lime-700 cursor-pointer rounded-[22px] pt-[8px] pb-[8px] pl-[12px] pr-[12px] transition-colors ease transform hover:bg-lime-700/50 hover:text-white hover:shadow-xl hover:border-none " type="button" value="sign up" id="">
+                    <input  class="bg-transparent outline-none border border-lime-700 text-lime-700 cursor-pointer rounded-[22px] pt-[8px] pb-[8px] pl-[12px] pr-[12px] transition-colors ease transform hover:bg-lime-700/50 hover:text-white hover:shadow-xl hover:border-none " type="button" value="sign up" onclick="toggleLoginForm()" id="">
                 </div>
 
             </div>
@@ -100,7 +100,7 @@
 
 
 
-    <div class="container-form register removee left-[14%] top-[5%] m-20 ml-48 flex fixed z-10 h-[500px] max-w-[900px] shadow-xl rounded-[15px] transition-all ease duration-[1s] m-5 items-center justify-center bg-white">
+    <div class="login-form register removee left-[14%] top-[5%] m-20 ml-48 flex fixed z-10 h-[500px] max-w-[900px] shadow-xl rounded-[15px] transition-all ease duration-[1s] m-5 items-center justify-center bg-white">
         <div class="information pl-[150px] h-full w-1/5 flex rounded-l-[15px] items-center text-center bg-lime-800/50 bg-opacity-80 border border-transparent">
             <div class="info-childs w-full ">
                 
@@ -268,35 +268,35 @@
                 </div>
             </div>
 
-            <div class="pt-10">
+            <div class="pt-36">
                 <div class="bg-gray-100 pt-11 pb-11 border-gray-500  rounded-r-[20px] shadow-xl ">
-                    <div class="text-xl text-center pr-[40px] pt-[0px] ">
+                    <div class="text-2xl text-center pr-[40px] pt-[0px] ">
                         <div class="">
-                            <span class="border-b border-zinc-500 text-zinc-500 font-semibold">Mix-Congelados</span>
+                            <span class="border-b border-zinc-500 text-zinc-500 font-semibold">Mix-Secos</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="pt-7  text-center">
                     <div class="bg-lime-700/50 pt-3 pb-3 rounded-r-[18px] shadow-lg">
-                        <div class=" pl-5 cursor-pointer">
-                            <h2 class="p-3 text-base border-b-2 border-transparent hover:border-b-2 hover:bg-zinc-500/50 text-zinc-600 rounded-[18px] font-semibold w-max transform transition hover:translate-x-6">Mix-frutos rojos/frutilla</h2>
+                        <div class=" pl-10 cursor-pointer">
+                            <h2 class="p-3 text-base border-b-2 border-transparent hover:border-b-2 hover:bg-zinc-500/50 text-zinc-600 rounded-[18px] font-semibold w-max transform transition hover:translate-x-6">Mix Tradicional</h2>
                         </div>
                     </div>
                 </div>
 
                 <div class="pt-5  text-center">
                     <div class="bg-lime-700/50 pt-3 pb-3 rounded-r-[18px] shadow-lg">
-                        <div class=" pl-5 cursor-pointer">
-                            <h2 class="p-3 text-base border-b-2 border-transparent hover:border-b-2 hover:bg-zinc-500/50 text-zinc-600 rounded-[18px] font-semibold w-max transform transition hover:translate-x-6">Mix-frutos rojos/frutilla</h2>
+                        <div class=" pl-10 cursor-pointer">
+                            <h2 class="p-3 text-base border-b-2 border-transparent hover:border-b-2 hover:bg-zinc-500/50 text-zinc-600 rounded-[18px] font-semibold w-max transform transition hover:translate-x-6">Mix Tropical</h2>
                         </div>
                     </div>
                 </div>
 
                 <div class="pt-5  text-center">
                     <div class="bg-lime-700/50 pt-3 pb-3 rounded-r-[18px] shadow-lg">
-                        <div class=" pl-5 cursor-pointer">
-                            <h2 class="p-3 text-base border-b-2 border-transparent hover:border-b-2 hover:bg-zinc-500/50 text-zinc-600 rounded-[18px] font-semibold w-max transform transition hover:translate-x-6">Mix-frutos rojos/frutilla</h2>
+                        <div class=" pl-10 cursor-pointer">
+                            <h2 class="p-3 text-base border-b-2 border-transparent hover:border-b-2 hover:bg-zinc-500/50 text-zinc-600 rounded-[18px] font-semibold w-max transform transition hover:translate-x-6">Mix Energéticos</h2>
                         </div>
                     </div>
                 </div>
@@ -326,7 +326,7 @@
                         </div>
                     </div>
     
-                    <div id="sliderContainer" class="w-10/12 overflow-hidden pt-10 border-2 border-gray-300 border-t-zinc-200"> 
+                    <div id="sliderContainer" class="w-10/12 overflow-hidden pt-10 rounded-md border-2 border-gray-300 border-t-zinc-200"> 
                         <ul id="slider" class="flex w-full  transition-margin duration-700">
                             <li class="card p-5 ">
                                 <div class="border rounded-lg p-5 h-full bg-gray-100 transform transition-all ease-in hover:scale-105 shadow-lg">
@@ -420,7 +420,7 @@
 <!----------------->
 
 
-<div class="col-span-4 pb-24 pt-[25px]">
+<!-- <div class="col-span-4 pb-24 pt-[25px]">
     <div>
         <div class="intro-catalogo text-center">
             <h2 class="titulo-catalogo text-3xl font-bold text-gray-700 ">+ info sobre esta parte del catálogo.</h2>
@@ -434,7 +434,7 @@
     <div class="flex">
         <div class="w-2/12 flex items-center">
             <div class="w-full text-right">
-                <button onclick="prev()" class="p-3 rounded-full bg-white border-gray-300 shadow-lg mr-5">
+                <button onclick="siguiente()" class="p-3 rounded-full bg-white border-gray-300 shadow-lg mr-5">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
                     </svg>
@@ -530,7 +530,7 @@
 
         <div class="w-2/12 flex items-center">
             <div class="w-full">
-                <button onclick="next()" class="p-3 rounded-full bg-white border-gray-300 shadow-lg ml-5">
+                <button onclick="anterior()" class="p-3 rounded-full bg-white border-gray-300 shadow-lg ml-5">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                     </svg>
@@ -574,7 +574,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 
         </section>
@@ -585,7 +585,7 @@
 
 
 
-        <section class="background w-full h-64 bg-no-repeat bg-cover bg-bottom py-8 opacity-[.93]" style="background-image: url(../e-commers/images/desayuno-saludable.webp);">
+        <section class="background w-full h-64 bg-no-repeat bg-cover bg-bottom py-8 opacity-[.93]" style="background-image: url(../pre-entrega1Uriarte/images/desayuno-saludable.webp);">
 
             <div class="contenido1">
     

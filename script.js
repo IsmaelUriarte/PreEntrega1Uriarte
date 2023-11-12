@@ -35,6 +35,40 @@ function next() {
 }
 
 
+
+// let sliderContainer2 = document.getElementById('sliderContainer2');
+// let slider2 = document.getElementById('slider2');
+// let cardds = slider2.getElementsByTagName('li');
+
+// let elementsToShow2 = 3;
+// let currentSlide2 = 0;
+
+// let sliderContainer2Width = sliderContainer2.clientWidth;
+// let carddWidth = sliderContainer2Width / elementsToShow2;
+
+// slider2.style.width = (cardds.length * carddWidth) + 'px';
+
+// for (let index = 0; index < cardds.length; index++) {
+//     const element = cardds[index];
+//     element.style.width = carddWidth + 'px';
+// }
+
+// function siguiente() {
+//     if (currentSlide2 > 0) {
+//         currentSlide2--;
+//         slider2.style.marginLeft = (-currentSlide2 * carddWidth) + 'px';
+//     }
+// }
+
+// function anterior() {
+//     if (currentSlide2 < (cardds.length - elementsToShow2)) {
+//         currentSlide2++;
+//         slider2.style.marginLeft = (-currentSlide2 * carddWidth) + 'px';
+//     }
+// }
+
+
+
 //<------------------------------------------->
 
 
@@ -83,6 +117,37 @@ if (correoInicio && contrasenaInicio) {
         alert('Por favor, complete todos los campos de inicio de sesión.');
     }
 });
+
+
+function toggleLoginForm() {
+    
+    var loginForm = document.querySelector('.login-form');
+        loginForm.classList.toggle('removee');
+    }
+
+
+    function toggleContainerForm() {
+    
+        var containerForm = document.querySelector('.container-form');
+            containerForm.classList.toggle('loginn');
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // para el Tutor, primero paso a comentarte que estuve muy frustrado ya que java script
 // me esta costando bastante y espero puedas comprender que quizas me cuesta entender y comprender
