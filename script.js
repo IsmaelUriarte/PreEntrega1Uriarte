@@ -136,33 +136,211 @@ function toggleLoginForm() {
 
 
 
+        const btnCart = document.querySelector('.container-cart-icon');
+        const containerCartProducts = document.querySelector(
+            '.container-cart-products'
+        );
+        
+        btnCart.addEventListener('click', () => {
+            containerCartProducts.classList.toggle('hidden-cart');
+        });
+        
+        /* ========================= */
+        const cartInfo = document.querySelector('.cart-product');
+        const rowProduct = document.querySelector('.row-product');
+        
+        // Lista de todos los contenedores de productos
+        const productsList = document.querySelector('.container-items');
+        
+        // Variable de arreglos de Productos
+        let allProducts = [];
+        
+        const valorTotal = document.querySelector('.total-pagar');
+        
+        const countProducts = document.querySelector('#contador-productos');
+        
+        const cartEmpty = document.querySelector('.cart-empty');
+        const cartTotal = document.querySelector('.cart-total');
+        
+        productsList.addEventListener('click', e => {
+            if (e.target.classList.contains('btn-add-cart')) {
+                const product = e.target.parentElement;
+        
+                const infoProduct = {
+                    quantity: 1,
+                    title: product.querySelector('h2').textContent,
+                    price: product.querySelector('p').textContent,
+                };
+        
+                const exits = allProducts.some(
+                    product => product.title === infoProduct.title
+                );
+        
+                if (exits) {
+                    const products = allProducts.map(product => {
+                        if (product.title === infoProduct.title) {
+                            product.quantity++;
+                            return product;
+                        } else {
+                            return product;
+                        }
+                    });
+                    allProducts = [...products];
+                } else {
+                    allProducts = [...allProducts, infoProduct];
+                }
+        
+                showHTML();
+            }
+        });
+        
+        rowProduct.addEventListener('click', e => {
+            if (e.target.classList.contains('icon-close')) {
+                const product = e.target.parentElement;
+                const title = product.querySelector('p').textContent;
+        
+                allProducts = allProducts.filter(
+                    product => product.title !== title
+                );
+        
+                console.log(allProducts);
+        
+                showHTML();
+            }
+        });
+        
+        // Funcion para mostrar  HTML
+        const showHTML = () => {
+            if (!allProducts.length) {
+                cartEmpty.classList.remove('hidden');
+                rowProduct.classList.add('hidden');
+                cartTotal.classList.add('hidden');
+            } else {
+                cartEmpty.classList.add('hidden');
+                rowProduct.classList.remove('hidden');
+                cartTotal.classList.remove('hidden');
+            }
+        
+            // Limpiar HTML
+            rowProduct.innerHTML = '';
+        
+            let total = 0;
+            let totalOfProducts = 0;
+        
+            allProducts.forEach(product => {
+                const containerProduct = document.createElement('div');
+                containerProduct.classList.add('cart-product');
+        
+                containerProduct.innerHTML = `
+                    <div class="info-cart-product">
+                        <span class="cantidad-producto-carrito">${product.quantity}</span>
+                        <p class="titulo-producto-carrito">${product.title}</p>
+                        <span class="precio-producto-carrito">${product.price}</span>
+                    </div>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="icon-close"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M6 18L18 6M6 6l12 12"
+                        />
+                    </svg>
+                `;
+        
+                rowProduct.append(containerProduct);
+        
+                total =
+                    total + parseInt(product.quantity * product.price.slice(1));
+                totalOfProducts = totalOfProducts + product.quantity;
+            });
+        
+            valorTotal.innerText = `$${total}`;
+            countProducts.innerText = totalOfProducts;
+        };
 
 
 
+        function suscribirse() {
+            // Valor del campo de correo electrónico
+            var email = document.getElementById('emailInput').value;
+
+            // Validar el correo electrónico 
+            if (email.trim() === '') {
+                alert('Por favor, ingresa tu correo electrónico.');
+                return;
+            }
+
+            // Alerta
+            alert('¡Gracias por suscribirte!');
+
+            // Limpieza del campo de correo electrónico después de haberse suscrito
+            document.getElementById('emailInput').value = '';
+        }
 
 
+        function verMas(promo) {
+            // Seleccionar el primer párrafo dentro de la sección
+            var parrafo = document.querySelector('.section-home');
+
+            // Cambiar el contenido del párrafo
+            parrafo.textContent = 'Detalles de la promo "' + promo + '"';
+        }
+
+        function verMas(promoId) {
+            // Seleccionar el elemento de detalles correspondiente a la promo
+            var detalles = document.querySelector('.detalles');
+            
+            // Mostrar u ocultar los detalles al hacer clic en el botón
+            if (detalles.style.display === 'none' || detalles.style.display === '') {
+                detalles.style.display = 'block';
+            } else {
+                detalles.style.display = 'none';
+            }
+        }
+
+        function verMas2(promoId) {
+            // Seleccionar el elemento de detalles correspondiente a la promo
+            var detalles2 = document.querySelector('.detalles-2');
+            
+            // Mostrar u ocultar los detalles al hacer clic en el botón
+            if (detalles2.style.display === 'none' || detalles2.style.display === '') {
+                detalles2.style.display = 'block';
+            } else {
+                detalles2.style.display = 'none';
+            }
+        }
 
 
+        function verMas3(promoId) {
+            // Seleccionar el elemento de detalles correspondiente a la promo
+            var detalles3 = document.querySelector('.detalles-3');
+            
+            // Mostrar u ocultar los detalles al hacer clic en el botón
+            if (detalles3.style.display === 'none' || detalles3.style.display === '') {
+                detalles3.style.display = 'block';
+            } else {
+                detalles3.style.display = 'none';
+            }
+        }
 
 
-
-
-
-
-// para el Tutor, primero paso a comentarte que estuve muy frustrado ya que java script
-// me esta costando bastante y espero puedas comprender que quizas me cuesta entender y comprender
-// la logica de este lenguaje, y bueno paso dejarte unas explicaciones acerca de mi proyecto
-// para que mas o menos entiendas y si puedes ayudarme, uno de los primeros temitas y problemas es con 
-// respecto al slider el cual cuando le agrego propiedades para darle la misma funcion que al otro no 
-// funciona y las flechas del segundo actúan tambiún en el primero pero no en si mismo. Luego como veras
-// cabe destacar que estare trabajndo en el despliegue del registro y el inicio de sesion, ya que para ver 
-// la pestaña de registro o inicio de sesion tienes que dirijirte al style y quitarle el estilo a uno y agregarselo al otro
-// estoy trabajando en como lograr desplegarlos con los botones en la parte superior de la page ya que estuve 
-// sin poder lograrlo, si puedes darme algun consejo o una ayuda para poder solucionarlo me serviria, y el
-// carrito todavia no lo empecé ya que estuve muy travado estas semanas en cuanto a entendimiento y demas. 
-
-
-
+        function verMas4(promoId) {
+            // Seleccionar el elemento de detalles correspondiente a la promo
+            var detalles4 = document.querySelector('.detalles-4');
+            
+            // Mostrar u ocultar los detalles al hacer clic en el botón
+            if (detalles4.style.display === 'none' || detalles4.style.display === '') {
+                detalles4.style.display = 'block';
+            } else {
+                detalles4.style.display = 'none';
+            }
+        }
 
 
 
