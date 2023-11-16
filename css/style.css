@@ -189,13 +189,32 @@ header{
 }
 
 
+.hidden {
+    display: none;
+}
 
 
+#customAlert {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    color: white; /* Texto blanco para mayor contraste */
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px; /* Bordes ligeramente redondeados */
+    z-index: 1000;
+}
 
+.alert-success {
+    background: linear-gradient(45deg, #0d7742, #079e53); /* Gradiente verde */
+}
 
-
-
-
+.alert-error {
+    background: linear-gradient(45deg, #ff4524, #bb0404); /* Gradiente rojo */
+}
 
 
 

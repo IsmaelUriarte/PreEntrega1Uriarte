@@ -10,6 +10,8 @@
 </head>
 <body class="body z-0">
 
+    <div id="customAlert"></div>
+
     <header class="pb-5 grid grid-cols-3 bg-gradient-to-t from-lime-700/50 to-zinc-200">
         <div class="">
             <div class=" pt-3">
@@ -19,15 +21,14 @@
             </div>
         </div>
 
-        <div class="col-start-2 col-end-3">
-            <div class="pt-3">
-                <div class="bsc-2 ">
-                    <input type="text" placeholder="Buscar Productos" class="outline-none buscador-2 border border-zinc-300 text-lg pt-2 pb-2 pl-3 pr-3 bg-white rounded-[22px]"> <button class="transform transition-all ease-in hover:scale-105 boton-buscar pr-3 pl-3 pt-1.5 pb-1.5 bg-lime-700/50 transition-colors ease transform hover:bg-lime-700/50 hover:text-white hover:shadow-xl  rounded-[15px] text-white"> Buscar </button>
-                </div>
+        <div class="col-start-2 col-end-3 pt-3">
+            <div class="bsc-2 ">
+                <input type="text" id="searchInput" placeholder="Buscar Productos" class="outline-none buscador-2 border border-zinc-300 text-lg pt-2 pb-2 pl-3 pr-3 bg-white rounded-[22px]"> <button onclick="filtrarMixes()" class="transform transition-all ease-in hover:scale-105 boton-buscar pr-3 pl-3 pt-1.5 pb-1.5 bg-lime-700/50 transition-colors ease transform hover:bg-lime-700/50 hover:text-white hover:shadow-xl  rounded-[15px] text-white"> Buscar </button>
+                <div class="mt-3 mb-3" id="mixes-list"></div>
             </div>
         </div>
 
-
+        
 
             <div class=" flex flex-row-reverse  pr-10">
 
@@ -324,8 +325,8 @@
 
 <!-- PRODUCTOS -->
 
-            <div class="container-items mb-[150px] grid grid-cols-3 gap-x-5 gap-y-20">
-                <div class="item rounded-xl shadow-lg transform hover:shadow-xl">
+            <div class="container-items ml-7 mr-7 mb-[150px] grid grid-cols-3 gap-x-10 gap-y-20" id="productos-container">
+                <div class="item mt-3 rounded-xl shadow-lg transform hover:shadow-xl">
                     <figure class="overflow-hidden">
                         <img class="rounded-t-xl transform transition-all ease-in hover:scale-105 object-cover"
                             src="./images/alimentos-dieteticos.jpg"
@@ -333,13 +334,13 @@
                         />
                     </figure>
                     <div class="info-product flex flex-col rounded-b-xl pl-5 pb-7 pr-5 bg-zinc-200 leading-loose gap-2.5">
-                        <h2 class="pt-2.5 font-semibold text-zinc-700 text-xl">Producto 1</h2>
+                        <h2 class="pt-2.5 font-semibold text-zinc-700 text-xl">mix 1</h2>
                         <p class="price text-xl pb-2 font-semibold text-zinc-700">$80</p>
                         <button class="btn-add-cart p-x-5 pb-2 pt-2 border-none font-semibold text-zinc-700 bg-lime-700/50 transition-all ease-in hover:scale-95 ">Añadir al carrito</button>
                     </div>
                 </div>
 
-                <div class="item rounded-xl shadow-lg transform hover:shadow-xl">
+                <div class="item mt-3 rounded-xl shadow-lg transform hover:shadow-xl">
                     <figure class="overflow-hidden">
                         <img class="rounded-t-xl transform transition-all ease-in hover:scale-105 object-cover"
                             src="./images/alimentos-dieteticos.jpg"
@@ -347,13 +348,13 @@
                         />
                     </figure>
                     <div class="info-product flex flex-col rounded-b-xl pl-5 pb-7 pr-5 bg-zinc-200 leading-loose gap-2.5">
-                        <h2 class=" title pt-2.5 font-semibold text-zinc-700 text-xl">Producto 2</h2>
+                        <h2 class=" title pt-2.5 font-semibold text-zinc-700 text-xl">mix 2</h2>
                         <p class="price text-xl pb-2 font-semibold text-zinc-700">$20</p>
                         <button class="btn-add-cart p-x-5 pb-2 pt-2 border-none font-semibold text-zinc-700 bg-lime-700/50 transition-all ease-in hover:scale-95 ">Añadir al carrito</button>
                     </div>
                 </div>
 
-                <div class="item rounded-xl shadow-lg transform hover:shadow-xl">
+                <div class="item mt-3 rounded-xl shadow-lg transform hover:shadow-xl">
                     <figure class="overflow-hidden">
                         <img class="rounded-t-xl transform transition-all ease-in hover:scale-105 object-cover"
                             src="./images/alimentos-dieteticos.jpg"
@@ -361,13 +362,13 @@
                         />
                     </figure>
                     <div class="info-product flex flex-col rounded-b-xl pl-5 pb-7 pr-5 bg-zinc-200 leading-loose gap-2.5">
-                        <h2 class="pt-2.5 font-semibold text-zinc-700 text-xl">Producto 3</h2>
+                        <h2 class="pt-2.5 font-semibold text-zinc-700 text-xl">mix 3</h2>
                         <p class="price text-xl pb-2 font-semibold text-zinc-700">$50</p>
                         <button class="btn-add-cart p-x-5 pb-2 pt-2 border-none font-semibold text-zinc-700 bg-lime-700/50 transition-all ease-in hover:scale-95 ">Añadir al carrito</button>
                     </div>
                 </div>
 
-                <div class="item rounded-xl shadow-lg transform hover:shadow-xl">
+                <div class="item mt-3 rounded-xl shadow-lg transform hover:shadow-xl">
                     <figure class="overflow-hidden">
                         <img class="rounded-t-xl transform transition-all ease-in hover:scale-105 object-cover"
                             src="./images/alimentos-dieteticos.jpg"
@@ -375,13 +376,13 @@
                         />
                     </figure>
                     <div class="info-product flex flex-col rounded-b-xl pl-5 pb-7 pr-5 bg-zinc-200 leading-loose gap-2.5">
-                        <h2 class="pt-2.5 font-semibold text-zinc-700 text-xl">Producto 4</h2>
+                        <h2 class="pt-2.5 font-semibold text-zinc-700 text-xl">mix 4</h2>
                         <p class="price text-xl pb-2 font-semibold text-zinc-700">$90</p>
                         <button class="btn-add-cart p-x-5 pb-2 pt-2 border-none font-semibold text-zinc-700 bg-lime-700/50 transition-all ease-in hover:scale-95 ">Añadir al carrito</button>
                     </div>
                 </div>
 
-                <div class="item rounded-xl shadow-lg transform hover:shadow-xl">
+                <div class="item mt-3 rounded-xl shadow-lg transform hover:shadow-xl">
                     <figure class="overflow-hidden">
                         <img class="rounded-t-xl transform transition-all ease-in hover:scale-105 object-cover"
                             src="./images/alimentos-dieteticos.jpg"
@@ -389,13 +390,13 @@
                         />
                     </figure>
                     <div class="info-product flex flex-col rounded-b-xl pl-5 pb-7 pr-5 bg-zinc-200 leading-loose gap-2.5">
-                        <h2 class="pt-2.5 font-semibold text-zinc-700 text-xl">Producto 5</h2>
+                        <h2 class="pt-2.5 font-semibold text-zinc-700 text-xl">mix 5</h2>
                         <p class="price text-xl pb-2 font-semibold text-zinc-700">$90</p>
                         <button class="btn-add-cart p-x-5 pb-2 pt-2 border-none font-semibold text-zinc-700 bg-lime-700/50 transition-all ease-in hover:scale-95 ">Añadir al carrito</button>
                     </div>
                 </div>
 
-                <div class="item rounded-xl shadow-lg transform hover:shadow-xl">
+                <div class="item mt-3 rounded-xl shadow-lg transform hover:shadow-xl">
                     <figure class="overflow-hidden">
                         <img class="rounded-t-xl transform transition-all hover:scale-105 transform hover:rounded-t-xl  object-cover"
                             src="./images/alimentos-dieteticos.jpg"
@@ -403,7 +404,7 @@
                         />
                     </figure>
                     <div class="info-product flex flex-col rounded-b-xl pl-5 pb-7 pr-5 bg-zinc-200 leading-loose gap-2.5">
-                        <h2 class="pt-2.5 font-semibold text-zinc-700">Producto 6</h2>
+                        <h2 class="pt-2.5 font-semibold text-zinc-700">mix 6</h2>
                         <p class="price text-lg font-semibold text-zinc-700">$90</p>
                         <button class="btn-add-cart p-x-5 pb-2 pt-2 border-none font-semibold text-zinc-700 bg-lime-700/50 transition-all ease-in hover:scale-95 ">Añadir al carrito</button>
                     </div>
@@ -792,8 +793,8 @@
 
                 <div class="bsc-2  text-center pl-[0px] pr-[0px] ">
                     <b class="text-white">Suscríbete para recibir Novedades</b>
-                    <p class="pb-2.5 text-white">Nuevas productos y semanas de descuebtos.</p>
-                    <input type="mail" placeholder="Ingresá tu e-mail" class="buscador-2 p-1.5 pl-2.5 rounded-[18px] outline-none"> <button class="transform transition-all ease-in hover:scale-105 boton-buscar p-1.5 bg-gradient-to-r from-lime-600 to-lime-500 hover:from-lime-500 hover:to-lime-600 rounded-[15px] text-white" id="emailInput" onclick="suscribirse()" >Suscríbirse</button>
+                    <p class="pb-2.5 text-white">Nuevas productos y semanas de descuentos.</p>
+                    <input id="emailInput" type="mail" placeholder="Ingresá tu e-mail" class="buscador-2 p-1.5 pl-2.5 rounded-[18px] outline-none" > <button class="transform transition-all ease-in hover:scale-105 boton-buscar p-1.5 bg-gradient-to-r from-lime-600 to-lime-500 hover:from-lime-500 hover:to-lime-600 rounded-[15px] text-white"  onclick="suscribirse()" >Suscríbirse</button>
                 </div>
 
                 <div class="flex place-content-around">
@@ -815,11 +816,9 @@
         <small>&copy;2017 <b>NutriFit</b> - Todos los Derechos Reservados</small>
     </div>
 
+    
 
-
-
-
-
+<script src="filtro_busqueda.js"></script>
 <script src="script.js"></script>
 
 </body>

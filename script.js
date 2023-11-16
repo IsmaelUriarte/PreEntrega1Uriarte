@@ -265,24 +265,51 @@ function toggleLoginForm() {
         };
 
 
+        // SUSCRIPCION
 
         function suscribirse() {
             // Valor del campo de correo electrónico
             var email = document.getElementById('emailInput').value;
-
+        
             // Validar el correo electrónico 
             if (email.trim() === '') {
-                alert('Por favor, ingresa tu correo electrónico.');
+                mostrarAlerta('Por favor, ingresa tu correo electrónico.', 'alert-error');
                 return;
             }
-
-            // Alerta
-            alert('¡Gracias por suscribirte!');
-
+        
+            // Expresión regular para validar formato de correo electrónico
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+            if (!emailRegex.test(email)) {
+                mostrarAlerta('Por favor, ingresa un correo electrónico válido.', 'alert-error');
+                return;
+            }
+        
+            // Mostrar alerta de agradecimiento por suscribirse
+            mostrarAlerta('¡Gracias por suscribirte!', 'alert-success');
+        
             // Limpieza del campo de correo electrónico después de haberse suscrito
             document.getElementById('emailInput').value = '';
         }
+        
+        function mostrarAlerta(mensaje, tipo) {
+            var customAlert = document.getElementById('customAlert');
+            customAlert.textContent = mensaje;
+        
+            // Aplicar clase de estilo según el tipo de alerta
+            customAlert.className = tipo;
+        
+            // Mostrar el elemento personalizado
+            customAlert.style.display = 'block';
+        
+            // Ocultar el elemento después de 2 segundos
+            setTimeout(function() {
+                customAlert.style.display = 'none';
+            }, 2000);
+        }
 
+
+        // PROMOS
 
         function verMas(promo) {
             // Seleccionar el primer párrafo dentro de la sección
@@ -341,9 +368,6 @@ function toggleLoginForm() {
                 detalles4.style.display = 'none';
             }
         }
-
-
-
 
 
 

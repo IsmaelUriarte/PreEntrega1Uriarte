@@ -1,0 +1,38 @@
+[
+    {
+        "nombre": "Producto 1",
+        "imagen": "./images/alimentos-dieteticos.jpg",
+        "precio": 80
+    },
+
+    {
+        "nombre": "Producto 2",
+        "imagen": "./images/alimentos-dieteticos.jpg",
+        "precio": 20
+    },
+
+    {
+    "nombre": "Producto 3",
+        "imagen": "./images/alimentos-dieteticos.jpg",
+    
+    "precio": 50
+    },
+
+    {
+        "nombre": "Producto 4",
+        "imagen": "./images/alimentos-dieteticos.jpg",
+        "precio": 90
+        },
+    
+    {
+        "nombre": "Producto 5",
+        "imagen": "./images/alimentos-dieteticos.jpg",
+        "precio": 90
+    },
+
+    {
+        "nombre": "Producto 3",
+        "imagen": "./images/alimentos-dieteticos.jpg",
+        "precio": 90
+    }
+]
