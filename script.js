@@ -209,7 +209,7 @@ function toggleContainerForm() {
             }
         });
         
-        // Funcion para mostrar  HTML
+        // Funcion para mostrar el HTML
         const showHTML = () => {
             if (!allProducts.length) {
                 cartEmpty.classList.remove('hidden');
@@ -265,13 +265,13 @@ function toggleContainerForm() {
         };
 
 
-        // SUSCRIPCION
+        // SUSCRIPCIÓN
 
         function suscribirse() {
             // Valor del campo de correo electrónico
             var email = document.getElementById('emailInput').value;
         
-            // Validar el correo electrónico 
+            // Validación del correo electrónico 
             if (email.trim() === '') {
                 mostrarAlerta('Por favor, ingresa tu correo electrónico.', 'alert-error');
                 return;
