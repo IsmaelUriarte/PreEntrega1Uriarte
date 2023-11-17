@@ -72,7 +72,8 @@ function next() {
 //<------------------------------------------->
 
 
-// Registro de usuario
+// REGISTRO DE USUARIO
+
 document.getElementById('boton-registro').addEventListener('click', function () {
     const nombreCompleto = document.getElementById('nombreCompleto').value;
     const correoLogin = document.getElementById('correoLogin').value;
@@ -86,54 +87,53 @@ document.getElementById('boton-registro').addEventListener('click', function () 
             contrasenaLogin,
         };
 
-// Se almacenan los datos del usuario en el localStorage
-        
-localStorage.setItem('usuario', JSON.stringify(usuario));
+        // Se almacenan los datos del usuario en el localStorage
+        localStorage.setItem('usuario', JSON.stringify(usuario));
 
-alert('¡Registro exitoso! Ahora puedes iniciar sesión.');
+        alert('¡Bienvenido ' + nombreCompleto + '! Registro exitoso. Ahora puedes iniciar sesión.');
     } else {
-        alert('Por favor, complete todos los campos de registro.');
+        alert('Por favor, completa todos los campos de registro.');
     }
 });
 
-// Inicio de Sesión
+// INICIO DE SESIÓN
 document.getElementById('boton-iniciar-sesion').addEventListener('click', function () {
     const correoInicio = document.getElementById('correoInicio').value;
     const contrasenaInicio = document.getElementById('contrasenaInicio').value;
 
+    iniciarSesion(correoInicio, contrasenaInicio);
+});
 
-if (correoInicio && contrasenaInicio) {
+// Función para iniciar sesión
+function iniciarSesion(correo, contrasena) {
+    if (correo && contrasena) {
         // Se recuperan los datos del usuario guardados en el localStorage
         const usuario = JSON.parse(localStorage.getItem('usuario'));
 
-        if (usuario && usuario.correoLogin === correoInicio && usuario.contrasenaLogin === contrasenaInicio) {
-            alert('¡Inicio de sesión exitoso!');
-            // Detener en caso de error o proceder a realizar acciones después del inicio de sesión con exito
+        if (usuario && usuario.correoLogin === correo && usuario.contrasenaLogin === contrasena) {
+            alert('¡Hola ' + usuario.nombreCompleto + '! Iniciaste sesión exitosamente.');
+            // Detener en caso de error o proceder a realizar acciones después del inicio de sesión con éxito
         } else {
-            alert('Fallo en el inicio de sesión. Por favor, verifique su correo y contraseña.');
+            alert('Error en el inicio de sesión. Verifica tu correo y contraseña.');
         }
-    } 
-        else {
-        alert('Por favor, complete todos los campos de inicio de sesión.');
+    } else {
+        alert('Por favor, completa todos los campos de inicio de sesión.');
     }
-});
-
+}
 
 function toggleLoginForm() {
-    
     var loginForm = document.querySelector('.login-form');
-        loginForm.classList.toggle('removee');
-    }
+    loginForm.classList.toggle('removee');
+}
 
-
-    function toggleContainerForm() {
-    
-        var containerForm = document.querySelector('.container-form');
-            containerForm.classList.toggle('loginn');
-        }
+function toggleContainerForm() {
+    var containerForm = document.querySelector('.container-form');
+    containerForm.classList.toggle('loginn');
+}
 
 
 
+//<----------------------->
 
 
         const btnCart = document.querySelector('.container-cart-icon');

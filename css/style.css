@@ -70,15 +70,6 @@ img{
     max-width: 100%;
 }
 
-/* Header */
-header{
-    display: flex;
-    justify-content: space-between;
-    padding: 30px 0 40px 0;
-}
-
-
-
 .count-products{
     position: relative;
     top: 55%;
@@ -102,7 +93,7 @@ header{
     top: 50px;
     right: 0;
 
-    background-color: #e7e7e7bb;
+    background-color: #e7e7e7cc;
     width: 400px;
     z-index: 1;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
@@ -176,7 +167,18 @@ header{
 
 
 
+/* Header */
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0 40px 0;
+}
+
+
 /* REGISTRO E INICIO DE SECCION */
+
+
+
 
 .removee{
     position: absolute;
@@ -192,6 +194,7 @@ header{
 .hidden {
     display: none;
 }
+
 
 
 #customAlert {
